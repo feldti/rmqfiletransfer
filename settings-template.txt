@@ -1,0 +1,16 @@
+// mqserver
+// mquser
+// mqpassword
+// mqqueue
+// mqexchange
+// mqroutingkey
+// mqvhost
+// dbserver
+// dbname
+// dbuser
+// dbpassword
+// dbport
+// db transaction size
+// min msglevel forwarding
+// mqforwardroutingkey
+// debug "true"
