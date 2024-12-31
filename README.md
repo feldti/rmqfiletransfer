@@ -14,15 +14,15 @@ der Prozess nach, ob eine Datei an einem Pfad vorkommt und sendet diese dann.
 Ein Transfer einer Datei erfolgt über RabbitMQ. Dazu muß ein Prozess auf dem Quellrechner laufen und ein Prozess auf dem Zielrechner.
 Der Sender kann temporär gestartet werden, der Empfänger sollt dagegen immerlaufen, damit keine großen Datensätze unter RabbitMQ gespeichert werden müssen.
 
-Der Sender schnappt sich eine Datei und teilt diese in n-1 kleine Packungen von der Größe 50KByte auf. Das letzte Paket hat dann eine Größe < 50 KByte. 
+Der Sender schnappt sich eine Datei und teilt diese in n-1 kleine Packungen von der Größe x-KByte auf (Default x = 100). Das letzte Paket hat dann eine Größe < X-KByte. 
 
 Dateien werden immer komprimiert vor der Bearbeitung außer ihre Dateierweiterung ist Mitglied einer Liste von Extensions: zip, 7z, tar.gz, tgz.
 
 Jede Sendung bekommt die folgenden Informationen:
 
 * Job-ID
-* die Default-Paketgröße (um die Ablageposition des aktuellen Paketes ermitteln zu können)
-* die Größe der abzulegenden Datei (komprimiert, umd die Pakete ablegen zu können)
+* die Default-Paketgröße (um die Ablageposition des aktuellen Paketes ermitteln zu können - z.Z. 100 KByte)
+* die Größe der abzulegenden Datei (ggfs. komprimiert, umd die Pakete ablegen zu können)
 * einen Sendeindex (angefangen mit 1, endet mit n)
 * die Größe der aktuellen Sendung ist die Anzahl der Bytes im MessageBody
 * temp. Dateiname zur Ablage (angefangen mit "_____" (5x) und zusätzlich der Job-ID mit .part Erweiterung)

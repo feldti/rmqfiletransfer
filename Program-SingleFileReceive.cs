@@ -93,7 +93,7 @@ public partial class Program
             }                
             IModel channel = conn.CreateModel();
             channel.ConfirmSelect();
-            channel.BasicQos(0, 400, false);
+            channel.BasicQos(0, pApplicationConfig.MqQueueSize, false);
             var privateQueue = channel.QueueDeclare(queue: "", exclusive: true, autoDelete: true);
             // Bind the queue to the exchange with a routing key
             channel.QueueBind(queue: privateQueue.QueueName,

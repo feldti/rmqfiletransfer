@@ -100,10 +100,6 @@ public class PasApplicationConfig
 
     public ushort MqQueueSize { get; set; } = 100;
     
-    public int MqMinForwardLevel { get; set; } = 9999999;
-
-    public string MqForwardRoutingKey { get; set; } = "paslogalarm";
-
     public string MqvHostName { get; set; } = "/";
 
     public string MqExchangeName { get; set; } = "amq.topic";
