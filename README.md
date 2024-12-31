@@ -32,9 +32,11 @@ Jede Sendung bekommt die folgenden Informationen:
 * File Creation Timestamp
 * File Modification Timestamp
 
-Der Empfänger bildet beim Empfang die Nummer der aktuellen Seneindices und falls der Wert (n+1)*(n/2) erreicht wurde, weiß der Prozess, dass alle Pakete erhalten wurden und kann den Job abschließen.
+### Beispiel: Transfer
 
-* n=1 => 2*(1/2) = 1
-* n=2 => 3*(2/2) = 3
-* n=3 => 4*(3/2) = 6
+`/datadisk/projects/rmqfiletransfer/bin/Debug/net8.0/rmqfiletransfer sendfile --file=test.pdf --mqrkey=test`
+
+### Beispiel: Receive
+
+`/datadisk/projects/rmqfiletransfer/bin/Debug/net8.0/rmqfiletransfer receivefiles --directory=/home/usr/testreceive --mqrkey=test`
 
