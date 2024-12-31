@@ -34,9 +34,9 @@ Jede Sendung bekommt die folgenden Informationen:
 
 ### Beispiel: Transfer
 
-`/datadisk/projects/rmqfiletransfer/bin/Debug/net8.0/rmqfiletransfer sendfile --file=test.pdf --mqrkey=test`
+`rmqfiletransfer sendfile --file=test.pdf --mqrkey=test`
 
 ### Beispiel: Receive
 
-`/datadisk/projects/rmqfiletransfer/bin/Debug/net8.0/rmqfiletransfer receivefiles --directory=/home/usr/testreceive --mqrkey=test`
+`rmqfiletransfer receivefiles --directory=/home/usr/testreceive --mqrkey=test`
 
